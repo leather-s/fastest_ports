@@ -92,10 +92,10 @@ begin
     menu.prompt = "Please select an option or press 'Enter' to run proxy purge"
     menu.choice(:Run_proxy_purge) {
                                @test_site     = cli.ask "\n#{cli.color('Enter the full url for the site you wish to test.', :green)}"
-                               @ip            = cli.ask "\n#{cli.color("Enter the ip address you wish to purge ports for (hit 'Enter' for default.)", :green)}"
-                               @port_floor    = cli.ask "\n#{cli.color("Enter lowest port in test range (hit 'Enter' for default.)", :green)}"
-                               @port_ceiling  = cli.ask "\n#{cli.color("Enter highest port in test range (hit 'Enter' for default.)", :green)}"
-                               @ping_limit    = cli.ask "\n#{cli.color("Enter maximum allowed ping (hit 'Enter' for default.)", :green)}"
+                               @ip            = cli.ask "\n#{cli.color("Enter the ip address you wish to purge ports for.", :green)}"
+                               @port_floor    = cli.ask "\n#{cli.color("Enter lowest port in test range.", :green)}"
+                               @port_ceiling  = cli.ask "\n#{cli.color("Enter highest port in test range.", :green)}"
+                               @ping_limit    = cli.ask "\n#{cli.color("Enter maximum allowed ping.", :green)}"
                               }
 
     menu.default = :Run_proxy_purge
