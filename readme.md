@@ -14,7 +14,11 @@ Iterates through a specified range of ports (5 times by default), and only retur
 - run `bundle install`
 
 ## Use
+- open terminal and navigate to project folder
 - run `ruby fastest_ports`
+
+#### Now lets configure the script
+
 - when prompted enter `1`
 - when prompted enter url for test site
 - when prompted enter your proxy address
