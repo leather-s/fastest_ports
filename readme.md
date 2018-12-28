@@ -6,6 +6,8 @@ This script will loop through a range of ports on an ip address and return the f
 
 Iterates through a specified range of ports (5 times by default), and only returns proxies that are faster than your `ping_limit` on 4 of those 5 iterations.
 
+#### NOTE: Make sure to install on the COMPUTER/SERVER you are running tasks on.
+
 ## Installation
 - install latest ruby
 - clone this repository
