@@ -41,6 +41,7 @@ class FastestPorts
         )
 
         request.on_complete do |response|
+          break if response.timed_out?
           if @ping_limit >= (response.total_time * 1000).to_i
             @results[:"#{port}"] += 1
           end
