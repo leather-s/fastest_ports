@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
 gem 'typhoeus'
-gem 'pry'
+gem 'pry-nav'
 gem 'highline'
