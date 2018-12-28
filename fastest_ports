@@ -1,9 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'highline'
-require 'yaml'
-require 'pry'
-require 'fileutils'
+require 'pry-nav'
 require 'typhoeus'
 
 version = '0.0.1'
@@ -18,7 +16,7 @@ class FastestPorts
     @port_floor = floor
     @port_ceiling = ceiling
     @ping_limit = ping_limit
-    @ping_threshold = 4
+    @ping_threshold = 5
     @results = {}
   end
 
@@ -41,7 +39,7 @@ class FastestPorts
         )
 
         request.on_complete do |response|
-          next if response.timed_out?
+          # next if response.timed_out?
           if @ping_limit >= (response.total_time * 1000).to_i
             @results[:"#{port}"] += 1
           end
