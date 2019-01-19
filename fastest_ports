@@ -36,7 +36,7 @@ class FastestPorts
           {
             timeout_ms:   @ping_limit >= 1000 ? @ping_limit : 1000,
             proxy:        "#{ip_frag[0]}:#{port}",
-            proxyuserpwd: "#{ip_frag[2]}:#{ip_frag[3]}"
+            proxyuserpwd: "#{ip_frag[2]}:#{ip_frag[3]}",
             headers:      { 'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36' }
           }
         )
