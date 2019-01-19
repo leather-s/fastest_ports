@@ -26,6 +26,8 @@ class FastestPorts
       @results[:"#{port}"] = 0
     end
 
+    user_pass = @ip.split(":")[2]
+
     hydra = Typhoeus::Hydra.new(max_concurrency: 10)
 
     5.times do
@@ -33,7 +35,7 @@ class FastestPorts
         request = Typhoeus::Request.new(@test_site,
           {
             timeout_ms: @ping_limit >= 1000 ? @ping_limit : 1000,
-            proxy: "#{@ip}:#{port}",
+            proxy: user_pass ? "#{@ip}:#{port}:#{user_pass[2]}:#{user_pass[3]}" : "#{@ip}:#{port}",
             headers: { 'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36' }
           }
         )
