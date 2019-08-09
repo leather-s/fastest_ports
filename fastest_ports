@@ -55,10 +55,14 @@ class FastestPorts
     @starts = Time.now.to_i
     hydra.run
     @results.select { |port, ping_count| @ping_threshold <= ping_count }.keys.each { |t| puts ip_frag[2] ? "#{ip_frag[0]}:#{t}:#{ip_frag[2]}:#{ip_frag[3]}" : "#{ip_frag[0]}:#{t}" }
+
+    # @results.select do |port, ping_count|
+    #   @ping_threshold <= ping_count
+    # end.keys.each do |t|
+    #   puts ip_frag[2] ? "#{ip_frag[0]}:#{t}:#{ip_frag[2]}:#{ip_frag[3]}" : "#{ip_frag[0]}:#{t}"
+    # end
   end
 end
-
-# Begin
 
 begin
 
