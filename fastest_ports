@@ -65,7 +65,9 @@ begin
 
 
   banner = File.read("./banner.txt")
-  puts puts cli.color(banner, :cyan)
+  puts cli.color("version: #{version}", :cyan)
+  puts cli.color(banner, :cyan)
+
 
   cli.choose do |menu|
     menu.prompt = "Please select an option or press 'Enter' to run proxy purge"
